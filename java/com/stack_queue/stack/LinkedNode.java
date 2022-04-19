@@ -1,4 +1,4 @@
-package com.linearList.stack_queue.stack;
+package com.stack_queue.stack;
 
 public class LinkedNode<T> {
     private T data;

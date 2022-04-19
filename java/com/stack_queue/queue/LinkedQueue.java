@@ -1,6 +1,6 @@
-package com.linearList.stack_queue.queue;
+package com.stack_queue.queue;
 
-import com.linearList.stack_queue.stack.LinkedNode;
+import com.stack_queue.stack.LinkedNode;
 
 public class LinkedQueue<T> implements Queue<T> {
     private final LinkedNode<T> front;  //头节点

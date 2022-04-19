@@ -1,4 +1,4 @@
-package com.linearList.stack_queue.stack;
+package com.stack_queue.stack;
 
 public class StackTest {
     public static void main(String[] args) {

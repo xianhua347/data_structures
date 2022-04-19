@@ -1,4 +1,4 @@
-package com.linearList.stack_queue.stack;
+package com.stack_queue.stack;
 
 import java.io.Serializable;
 import java.util.EmptyStackException;

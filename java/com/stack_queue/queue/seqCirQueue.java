@@ -1,4 +1,4 @@
-package com.linearList.stack_queue.queue;
+package com.stack_queue.queue;
 
 import java.util.Arrays;
 
