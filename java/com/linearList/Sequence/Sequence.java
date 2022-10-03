@@ -16,7 +16,7 @@ public class Sequence<T> implements LinearList<T> {
         this.data = (T[]) new Object[length];
     }
 
-    //由values数组构造！
+    //由values数组构造
     public Sequence(T[] values) {
         this(values.length);
         for (int i = 0; i < values.length; i++) this.data[i] = values[i];

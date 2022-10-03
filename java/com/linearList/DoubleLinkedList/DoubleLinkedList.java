@@ -67,11 +67,11 @@ public class DoubleLinkedList<T> implements LinearList<T> {
 
     @Override
     public T remove(int i) {
-        DoubleNode<T> temp = getNode(i);
+        DoubleNode<T> temp = getNode(i); //获取要删除的节点
         if (temp != null){
-            T old= temp.data;
+            T old = temp.data;
             temp.prev.prev = temp.next;
-            if (temp.next!=null){
+            if (temp.next != null){
                 temp.next.prev = temp.prev;
                 return old;
             }

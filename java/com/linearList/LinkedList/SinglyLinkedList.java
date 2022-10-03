@@ -49,8 +49,9 @@ public class SinglyLinkedList<T> implements LinearList<T> {
     }
 
     @Override
+    //尾部插入！！
     public int insert(T t) {
-        return this.insert(this.size(), t);//尾部插入！！
+        return this.insert(this.size(), t);
     }
 
     @Override
