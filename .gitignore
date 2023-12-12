@@ -23,6 +23,8 @@
 hs_err_pid*
 java/.idea
 java/out
+java/.vscode
 
 python/.idea
+python/.vscode
 python/out
