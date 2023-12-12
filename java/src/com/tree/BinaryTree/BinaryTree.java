@@ -40,7 +40,9 @@ public class BinaryTree<T> implements BinaryTreeInter<T> {
     }
 
     public int height(BinaryTreeNode<T> node) {
-        if (node == null) return 0;
+        if (node == null) {
+            return 0;
+        }
         int leftHeight = height(node.leftChild);
         int rightHeight = height(node.rightChild);
         return (leftHeight > rightHeight) ? leftHeight + 1 : rightHeight + 1;
@@ -53,6 +55,10 @@ public class BinaryTree<T> implements BinaryTreeInter<T> {
             postOrder(node.leftChild);
             postOrder(node.rightChild);
         }
+    }
+
+    public void inOrder(){
+        inOrder(root);
     }
 
     @Override
@@ -79,27 +85,38 @@ public class BinaryTree<T> implements BinaryTreeInter<T> {
     }
 
     public BinaryTreeNode<T> search(BinaryTreeNode<T> p, T key) {
-        if (p == null || key == null)
+        if (p == null || key == null) {
             return null;
-        if (p.data.equals(key))
+        }
+        if (p.data.equals(key)) {
             return p;
+        }
         BinaryTreeNode<T> find = search(p.leftChild, key);
-        if (find == null)
+        if (find == null) {
             find = search(p.rightChild, key);
+        }
         return find;
     }
 
     @Override
     public BinaryTreeNode<T> getParent(BinaryTreeNode<T> node) {
-        if (root == null || node == null || node == root) return null;
+        if (root == null || node == null || node == root) {
+            return null;
+        }
         return getParent(this.root, node);
     }
 
     public BinaryTreeNode<T> getParent(BinaryTreeNode<T> p, BinaryTreeNode<T> node) {
-        if (p == null || node == null) return null;
-        if (p.leftChild == node || p.rightChild == node) return p;
+        if (p == null || node == null) {
+            return null;
+        }
+        if (p.leftChild == node || p.rightChild == node) {
+            return p;
+        }
         BinaryTreeNode<T> find = getParent(p.leftChild, node);
-        if (find == null) return getParent(p.rightChild, node);
+        if (find == null) {
+            return getParent(p.rightChild, node);
+        }
         return find;
     }
 
@@ -110,7 +127,9 @@ public class BinaryTree<T> implements BinaryTreeInter<T> {
 
     @Override
     public BinaryTreeNode<T> insertChild(BinaryTreeNode<T> p, T x, boolean leftChild) {
-        if (p == null || x == null) return null;
+        if (p == null || x == null) {
+            return null;
+        }
         if (leftChild) {
             p.leftChild = new BinaryTreeNode<T>(x, p.leftChild, null);
             return p.leftChild;
@@ -122,10 +141,11 @@ public class BinaryTree<T> implements BinaryTreeInter<T> {
     @Override
     public void removeChild(BinaryTreeNode<T> p, boolean leftChild) {
         if (p != null) {
-            if (leftChild)
+            if (leftChild) {
                 p.leftChild = null;
-            else
+            } else {
                 p.rightChild = null;
+            }
         }
     }
 
@@ -157,5 +177,6 @@ public class BinaryTree<T> implements BinaryTreeInter<T> {
         System.out.println( "root is  "+ tree.getRoot().data);
         System.out.println(search);
         tree.insertRoot(1);
+        tree.inOrder(binaryNode);
     }
 }

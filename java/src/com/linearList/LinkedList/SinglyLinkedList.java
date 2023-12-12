@@ -57,17 +57,19 @@ public class SinglyLinkedList<T> implements LinearList<T> {
     @Override
     public int insert(int i, T t) {
         int j = 0;
-        if (t == null) throw new NullPointerException("null pointer!");
+        if (t == null) {
+            throw new NullPointerException("null pointer!");
+        }
 
-        Node<T> p = this.head;//p指向head节点！
-        while (p.next != null && j < i) { //寻找i的前一个节点
-            p = p.next;
+        Node<T> newNode = this.head;//指向head节点！
+        while (newNode.next != null && j < i) { //寻找i的前一个节点
+            newNode = newNode.next;
             j++;
         }
 
-        if (p != null && j == i) {//找到i前面的一个节点
-            Node<T> s = new Node<T>(t, p.next);
-            p.next = s;
+        if (newNode != null && j == i) {//找到i前面的一个节点
+            Node<T> s = new Node<T>(t, newNode.next);
+            newNode.next = s;
             return i;
         } else {
             return -1;
@@ -146,11 +148,15 @@ public class SinglyLinkedList<T> implements LinearList<T> {
      */
     //查找最后第i个节点
     public Node<T> findLastIndexNode(Node<T> head, int index){
-        if (head ==null) throw new NullPointerException("没有数据!");//如果头为就抛出异常！
+        if (head ==null) {
+            throw new NullPointerException("没有数据!");//如果头为就抛出异常！
+        }
         final int size = size();//得到size
 
         //数据校验！
-        if (index<=0 ||index >size) throw new IndexOutOfBoundsException("IndexOutOfBoundsException");
+        if (index<=0 ||index >size) {
+            throw new IndexOutOfBoundsException("IndexOutOfBoundsException");
+        }
         Node<T> temp = this.head.next; //获取第一个数据
         //遍历数组 只要list总长度小于Index就继续循环！ eg: size 3 index 1 循环两次 就可以找到最后一个元素
         for (int i = 0; i <size-index ; i++) {

@@ -67,8 +67,9 @@ public abstract class AbstractTree<T> implements Tree<T>{
     }
 
     private int countRecursive(BinaryTreeNode<T> p){
-        if (p == null)
+        if (p == null) {
             return  0;
+        }
         return countRecursive(p.leftChild) + countRecursive(p.rightChild) + 1;
     }
 
@@ -78,8 +79,9 @@ public abstract class AbstractTree<T> implements Tree<T>{
     }
 
     private int  heightRecursive(BinaryTreeNode<T> p){
-        if (p == null)
+        if (p == null) {
             return 0;
+        }
         return Math.max(heightRecursive(p.leftChild),heightRecursive(p.rightChild))+1;
     }
 

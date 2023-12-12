@@ -62,4 +62,10 @@ public class seqCirQueue<T> implements Queue<T> {
                 ", rear=" + rear +
                 '}';
     }
+
+    public static void main(String[] args) {
+        Queue<String> stringQueue = new seqCirQueue<>();
+        stringQueue.enqueue("hello");
+        stringQueue.enqueue("mysql");
+    }
 }

@@ -2,16 +2,22 @@ package com.hash;
 
 
 
+/**
+
+ */
 public class HashTable {
     public HashItem[] hashItemsArrays; //哈希数组
     public int tableSize; //哈希表大小
     public int currentSize; //当前哈希表大小
 
+
    public HashTable(int tableSize){ //初始化数值
        this.tableSize = tableSize;
        this.currentSize = 0; //当前哈希表大小是0 在插入的时候会增加大小
        this.hashItemsArrays = new HashItem[tableSize]; //初始化哈希表大小
-       for (int i = 0; i < hashItemsArrays.length; i++) hashItemsArrays[i] = new HashItem(0);//初始化哈希数组
+       for (int i = 0; i < hashItemsArrays.length; i++) {
+           hashItemsArrays[i] = new HashItem(0);//初始化哈希数组
+       }
    }
 
     //构造哈希函数使用key % 哈希表大小
@@ -24,7 +30,9 @@ public class HashTable {
     int i = index;
     while (hashItemsArrays[i].flag == 1 && hashItemsArrays[i].key != key){
         i = hashFun(i + 1);
-        if (i==index) return -tableSize; //遍历完整个哈希表
+        if (i==index) {
+            return -tableSize; //遍历完整个哈希表
+        }
 
         if(hashItemsArrays[i].flag ==1){    //找到关键字key
             return i;   //返回下标
@@ -62,6 +70,8 @@ public class HashTable {
          HashTable hashTable = new HashTable(10);
         hashTable.insert(1);
         hashTable.insert(50);
+        hashTable.insert(1);
+        hashTable.insert(45);
         System.out.println(hashTable.find(50));
     }
 }

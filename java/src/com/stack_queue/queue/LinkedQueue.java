@@ -7,7 +7,7 @@ public class LinkedQueue<T> implements Queue<T> {
     private LinkedNode<T> rear;  // 尾节点
 
     public LinkedQueue() {
-        front = rear = new LinkedNode<T>();
+        front = rear = new LinkedNode<>();
     }
 
     @Override

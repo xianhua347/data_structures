@@ -3,10 +3,10 @@ package com.stack_queue;
 import com.stack_queue.stack.SeqStack;
 
 public class BrakeMatch {
-    public static boolean match(String expstr) {
-        final SeqStack<Character> stack = new SeqStack<>(expstr.length());  //初始化栈
-        for (int i = 0; i < expstr.length(); i++) { //读取每一个字符
-            char ch = expstr.charAt(i);
+    public static boolean match(String expression) {
+        final SeqStack<Character> stack = new SeqStack<>(expression.length());  //初始化栈
+        for (int i = 0; i < expression.length(); i++) { //读取每一个字符
+            char ch = expression.charAt(i);
             //如果是左括号入栈
             if ((ch == '(') || (ch == '[')) {
                 stack.push(ch);

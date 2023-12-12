@@ -3,7 +3,6 @@ package com.stack_queue.stack;
 import java.io.Serializable;
 import java.util.EmptyStackException;
 
-import static com.sun.tools.javac.util.ArrayUtils.ensureCapacity;
 
 public class SeqStack<T> implements Stack<T>, Serializable {
 
